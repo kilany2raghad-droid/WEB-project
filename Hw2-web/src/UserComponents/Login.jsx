@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../login.css";
+import logo from "../assets/YOUR_LOGO.png";
 
 export default function Login() {
 
@@ -101,10 +102,15 @@ export default function Login() {
           {/* LEFT — LOGO */}
           <a className="flex items-center" href="/">
             <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center p-1 border border-white shadow">
-              <img src="/YOUR_LOGO.png" className="w-7 h-7 rounded-full" alt="FitRise Logo" />
+              <img
+                src={logo}
+                className="w-7 h-7 rounded-full"
+                alt="FitRise Logo"
+              />
             </div>
             <span className="ml-3 font-bold text-xl logo-gradient">FitRise</span>
           </a>
+
 
           {/* CENTER — MENU */}
           <div className="hidden md:flex items-center space-x-10 mx-auto font-medium">
