@@ -1,0 +1,26 @@
+/* Additional styles from HTML */
+.opacity-0 {
+  opacity: 0;
+}
+
+.transition-opacity {
+  transition: opacity 0.5s;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+/* Ensure body styles are applied */
+body {
+  background: var(--bg) !important;
+  color: var(--text-main) !important;
+  transition: .4s ease !important;
+}
+
+/* Make sure the component uses the body styles */
+.min-h-screen {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text-main);
+}

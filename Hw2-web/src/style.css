@@ -1,0 +1,94 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ============= THEME SWITCH ============= */
+.theme-switch { position: relative; display: inline-block; width: 60px; height: 30px; }
+.theme-switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; inset: 0; background: #ffffffaa; border-radius: 30px; transition: .4s; box-shadow: inset 0 2px 6px rgba(0,0,0,0.15); }
+.slider:before {
+  position: absolute; content: "🌙"; font-size: 15px; display: flex; align-items: center; justify-content: center;
+  height: 26px; width: 26px; left: 2px; bottom: 2px;
+  background: linear-gradient(135deg, #C46CFF, #8E3CA9); border-radius: 50%; transition: .35s; color: white;
+}
+.theme-switch.light .slider:before { content: "☀️"; background: linear-gradient(135deg, #FFD37A, #FFB85C); font-size: 17px; }
+input:checked + .slider:before { transform: translateX(30px); content: "🌙"; font-size: 17px; background: linear-gradient(135deg, #8E3CA9, #C46CFF); }
+
+/* Buttons */
+.login-link { color: white !important; font-weight: 500; padding: 0 8px; transition: .2s; }
+.login-link:hover { opacity: .8; }
+.register-btn {
+  background: linear-gradient(135deg, #C46CFF 0%, #8E3CA9 100%) !important; color: white !important;
+  padding: 8px 20px; font-weight: 600; border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(142,60,169,0.35); transition: .25s ease;
+}
+.register-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(142,60,169,0.45); }
+
+/* Animations */
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn .9s ease-out forwards; }
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+.typing { display: inline-block; width: 0; white-space: nowrap; overflow: hidden; border-right: 3px solid var(--primary); animation: typing 3s steps(20) forwards, blink .7s infinite; }
+@keyframes typing { from { width:0 } to { width:100% } }
+@keyframes blink { 50% { border-color: transparent; } }
+.tilt:hover { transform: perspective(600px) rotateY(6deg) rotateX(6deg) scale(1.03); transition: .4s; box-shadow: 0 0 30px var(--primary-soft); }
+.chat-bubble { position: fixed; bottom:25px; right:25px; background: var(--primary); color:black; padding: 14px 20px; border-radius: 50px; box-shadow:0 0 20px var(--primary); font-weight:700; cursor:pointer; animation: floatChat 3s ease-in-out infinite; z-index:50; }
+@keyframes floatChat { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+
+/* Colors */
+:root {
+  --primary: #4EE4C2;
+  --primary-soft: rgba(78, 228, 194, 0.5);
+  --secondary: #A066FF;
+  --tertiary: #4CD3F5;
+  --grid-color: #1dd3b880;
+  --bg: #0B0F17;
+  --card-bg: rgba(255,255,255,0.05);
+  --text-main: white;
+  --text-sub: #c9c9c9;
+  --transition: .35s ease;
+}
+
+/* Light Mode */
+.light-mode {
+  --primary: #0B8A8C;
+  --secondary: #8E3CA9;
+  --tertiary: #8E3CA9;
+  --text-main: #1A1A1A;
+  --text-sub: #4A4A4A;
+  --card-bg: #FFFFFF;
+  --card-border: #E6E6E9;
+  --grid-color: rgba(0,0,0,0.05);
+  --bg: linear-gradient(135deg,#ffffff 0%,#F6F2FF 35%,#E8FBFB 75%,#ffffff 100%);
+}
+.light-mode nav { background: #0B8A8C !important; border-bottom: none !important; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.light-mode nav a { color: white !important; }
+.light-mode nav a:hover { color: #FDEBFF !important; }
+.light-mode nav .login-link { color: white !important; }
+.light-mode .btn-start { background: var(--primary) !important; color: white !important; box-shadow: 0 0 12px rgba(11,138,140,0.28) !important; }
+.light-mode .btn-demo { border: 2px solid var(--secondary) !important; color: var(--secondary) !important; }
+.light-mode .btn-demo:hover { background: #8e3ca915 !important; }
+.light-mode .feature-card { background: #ffffff !important; border: 1px solid var(--card-border) !important; box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important; }
+.light-mode .feature-title { color: var(--primary) !important; }
+.light-mode .feature-text { color: var(--text-sub) !important; }
+
+ /*
+ we add this for the part of miriam
+ */
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background-color: #1f2937;
+    padding: 24px;
+    min-height: 100vh;
+}
+
+/* Main dynamic area */
+.content {
+    margin-left: 240px;
+    padding: 40px;
+}
+
+
+
+
